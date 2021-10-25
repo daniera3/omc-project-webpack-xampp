@@ -1,0 +1,93 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import React from "react";
+import InputText from "../../components/InputText";
+import InputPassword from "../../components/InputPassword";
+import Text from "../../components/Text";
+import * as S from "./style";
+import Button from "../../components/Button";
+import { userLogin } from "../../actions/userActions";
+import { userStore } from "../../stores";
+
+
+
+class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = { username: '', password:'',massage:''};
+
+    this.onChange = this.onChange.bind(this);
+    this.handelClick = this.handelClick.bind(this);
+  }
+
+
+
+  onChange = () => {
+    this.setState({username: '', password:'',massage:userStore.getMassege()})
+    if (userStore.getUser() !== null) {
+      this.props.history.push('/');
+    }
+  }
+
+
+
+
+  componentDidMount() {
+    userStore.addChangeListener(this.onChange);
+    if (userStore.getUser() !== null) {
+     this.props.history.push('/');
+    }
+  }
+
+  componentWillUnmount() {
+    userStore.removeChangeListener(this.onChange);
+  }
+
+
+
+
+
+
+  handelClick = (e) => {
+    e.preventDefault();
+    if (this.state.username === '') {
+      this.setState({massage: "Username field cannot be empty"});
+    } else if (this.state.password.length < 7) {
+      this.setState({massage: "Password length can not be less than 7 "});
+    }
+    else {
+      const data = { 'username': this.state.username, 'password': this.state.password };
+      userLogin(data);
+
+    }
+  }
+
+  setUsername(user){
+    this.setState({username:user})
+  }
+
+  setPassword(pass){
+    this.setState({password:pass})
+  }
+
+render(){
+  return (
+
+    <S.Content>
+      <S.Header>
+        <Text size="64px" bold>
+          Login
+        </Text>
+      </S.Header>
+      <S.Form className='form-group' onSubmit={this.handelClick}>
+        <Text color='red' bold>{this.state.massage} </Text>
+        <InputText label='Username' val={this.state.username} onChange={this.setUsername.bind(this)} />
+        <InputPassword value={this.state.password} onChange={this.setPassword.bind(this)} />
+        <Button label="Login" color="primary" type='submit' onClick={this.handelClick} />
+      </S.Form>
+    </S.Content>
+  );
+}
+};
+
+export default Login;
