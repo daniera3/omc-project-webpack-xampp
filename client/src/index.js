@@ -5,4 +5,4 @@ import AppRouter from "./AppRouter";
 
 if (module.hot) module.hot.accept()
 
-ReactDOM.render(<AppRouter />, document.querySelector("#root"))
+ReactDOM.render(<AppRouter/>, document.querySelector("#root"))

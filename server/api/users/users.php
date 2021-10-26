@@ -34,26 +34,23 @@ function getAllUsers(Request $request, Response $response): Response
         }
         $db = null;
     } catch (PDOException $e) {
-        return $response->withJson(['error' => $e->getMessage()], 403);
+        log_error('sql exception',$request, $e);
+        return $response->withJson(['error' => 'sql failure'], 403);
     }
 
     return $response->withJson($user);
 }
 
 /**
+ * this func return all derails of user
+ * use hes cookie he sent for auth
  * @param Request $request
  * @param Response $response
  * @return Response
  */
 function getUserDetail(Request $request, Response $response): Response
 {
-    $data = $request->getCookieParams();
-    $session_id = strval($data['PHPSESSID'] ?? "");
-    if (session_status() === PHP_SESSION_NONE) {
-        session_id($session_id);
-        session_start();
-    }
-
+    openSession($request);
     if (isset($_SESSION) && !empty($_SESSION)) {
         $user = [
             "id" => $_SESSION['id'],
@@ -68,6 +65,7 @@ function getUserDetail(Request $request, Response $response): Response
 
 
 /**
+ * save in user session token for csrf
  * @param Request $request
  * @param Response $response
  * @return Response
@@ -97,11 +95,8 @@ function loginUser(Request $request, Response $response): Response
     $data = $request->getParsedBody();
     $username = (string)($data['username'] ?? "");
     $password = (string)($data['password'] ?? "");
-
-
-
     $user = array();
-    if (find($username, $user)) {
+    if (find($username, $user) || empty($user)) {
         return notFoundResponse($response);
     }
     $user = json_decode(json_encode($user[0], JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);
@@ -128,7 +123,7 @@ function postUser(Request $request, Response $response): Response
     insert($data);
 
     $user = array();
-    if (find($data['username'], $user)) {
+    if (find($data['username'], $user) || empty($user)) {
         return notFoundResponse($response);
     }
 
@@ -145,6 +140,7 @@ function postUser(Request $request, Response $response): Response
  */
 function updateUser(Request $request, Response $response): Response
 {
+
     $data = $request->getParsedBody();
     if (!isset($data['role']) && isset($data['role_login'])) {
         $data['role'] = $data['role_login'];
@@ -163,22 +159,20 @@ function updateUser(Request $request, Response $response): Response
  */
 function logoutUser(Request $request, Response $response): Response
 {
-    $data = $request->getCookieParams();
-    $session_id = (string)($data['PHPSESSID'] ?? "");
-    if (session_status() === PHP_SESSION_NONE) {
-        session_id($session_id);
-        session_start();
-    }
+    openSession($request);
+    $_SESSION = null;
     session_destroy();
     return $response->withJson(["success" => "logged out"]);
 }
 
 /**
- * 
+ * fun crate new session for set-cookies to response and if func get user details save them in new session func crate
+ * @param null $user
+ * @return array
  */
 function saveInSession($user = null): array
 {
-    $maxlifetime = 1800; //30 min
+    $maxlifetime = 60 * 5; //30 min
     $secure = true; // only over HTTPS
     $httponly = true; // true : prevent JavaScript access to session cookie
     $samesite = 'None';
@@ -195,26 +189,45 @@ function saveInSession($user = null): array
     ];
 }
 
-function sessionOpen(Request $request, Response $response): Response
+/**
+ * with auth cookie we open user cookie if he for can take data from $_SESSION
+ * func for not mack duplicates
+ * @param Request $request
+ * @param Response $response
+ * @return Response
+ */
+function isSessionOpen(Request $request, Response $response): Response
 {
     $data = $request->getCookieParams();
     // data['id'] = user id from cookie
     $session_id = (string)($data['PHPSESSID'] ?? "");
-
-    session_id($session_id);
-    saveInSession();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_id($session_id);
+        saveInSession();
+    }
     if (isset($_SESSION) && !empty($_SESSION)) {
         return $response->withJson(['success' => true]);
     }
     return $response->withJson(['error' => 'session not found'], 401);
 }
 
-
-
+function openSession(Request $request)
+{
+    $data = $request->getCookieParams();
+    // data['id'] = user id from cookie
+    $session_id = (string)($data['PHPSESSID'] ?? "");
+    if (session_status() === PHP_SESSION_NONE) {
+        session_id($session_id);
+        saveInSession();
+    }
+}
 
 /**
+ *
+ * func make query from DB get user par username and return he's details in retData array
  * @param string $username
- * @return array
+ * @param array $retData
+ * @return int
  */
 function find(string $username, array &$retData): int
 {
@@ -237,7 +250,7 @@ function find(string $username, array &$retData): int
             $data = [
                 "id" => intval($r["id"]),
                 "username" => strval($r["username"]),
-                "password" => strval($r["favorites"]),
+                "password" => strval($r["password"]),
                 "email" => strval($r["email"]),
                 "role" => strval($r["role"])
             ];
@@ -245,15 +258,22 @@ function find(string $username, array &$retData): int
         }
         return 0;
     } catch (Throwable $t) {
+        log_error('sql exception find in user',$t);
         return 1;
     }
 }
 
-
+/**
+ *
+ * func make query from DB get user par username and return how much row change
+ * @param string $username
+ * @param array $retData
+ * @return int
+ */
 function insert(array $input): int
 {
-
-    $statement = "
+    try {
+        $statement = "
             INSERT INTO user
                 (username, password, email)
             VALUES
@@ -261,19 +281,27 @@ function insert(array $input): int
         ";
 
 
-    $db = new db();
-    $db = $db->connect();
-    $statement = $db->prepare($statement);
-    $statement->execute(array(
-        'username' => $input['username'],
-        'password' => $input['password'],
-        'email' => $input['email'] ?? "",
-    ));
-    $db = null;
+        $db = new db();
+        $db = $db->connect();
+        $statement = $db->prepare($statement);
+        $statement->execute(array(
+            'username' => $input['username'],
+            'password' => $input['password'],
+            'email' => $input['email'] ?? "",
+        ));
+        $db = null;
+    } catch (Throwable $t) {
+        log_error('sql exception insert in user',$t);
+    }
     return $statement->rowCount();
 }
 
-
+/**
+ *  func make query from DB get user details and update them in db return how much row change
+ *
+ * @param array $input
+ * @return int
+ */
 function update(array $input): int
 {
 
@@ -283,8 +311,8 @@ function update(array $input): int
     ) {
         return false;
     }
-
-    $statement = "
+    try {
+        $statement = "
             UPDATE user
             SET
            
@@ -294,14 +322,17 @@ function update(array $input): int
         ";
 
 
-    $db = new db();
-    $db = $db->connect();
-    $statement = $db->prepare($statement);
-    $statement->execute(array(
-        'id' => $input['id'],
-        'email' => $input['email'] ?? '',
-        'role' => $input['role'],
-    ));
-    $db = null;
+        $db = new db();
+        $db = $db->connect();
+        $statement = $db->prepare($statement);
+        $statement->execute(array(
+            'id' => $input['id'],
+            'email' => $input['email'] ?? '',
+            'role' => $input['role'],
+        ));
+        $db = null;
+    } catch (Throwable $t) {
+        log_error('sql exception update in user',$t);
+    }
     return $statement->rowCount();
 }

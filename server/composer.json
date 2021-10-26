@@ -4,7 +4,8 @@
     "ext-pdo": "*",
     "slim/slim": "3.1",
     "guzzlehttp/psr7": "^2.1",
-    "ext-json": "*"
+    "ext-json": "*",
+    "katzgrau/klogger": "^1.2"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"

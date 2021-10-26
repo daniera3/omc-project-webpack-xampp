@@ -1,9 +1,8 @@
-import { EventEmitter } from "events";
+import {EventEmitter} from "events";
 import dispatcher from "../utils/appDispatcher"
 import actionTypes from "../actions/actionTypes";
-import { putFavoritesFetch } from "../hooks/useFavoritesFetch";
-import { userStore } from ".";
-
+import {putFavoritesFetch} from "../hooks/useFavoritesFetch";
+import {userStore} from ".";
 
 
 const CHANGE_EVENT = "change";
@@ -30,10 +29,10 @@ class FavoritesStore extends EventEmitter {
     emitChange($flag = true) {
         if (userStore.getUser() !== null && $flag)
             putFavoritesFetch().then(response => {
-                if (response.status !== 201) {
-                    alert("Error,cant save you`r change in you`r favorites list");
+                    if (response.status !== 201) {
+                        alert("Error,cant save you`r change in you`r favorites list");
+                    }
                 }
-            }
             )
         this.emit(CHANGE_EVENT);
     }
@@ -52,21 +51,19 @@ dispatcher.register((action) => {
         case actionTypes.UPDATE_FAVORITES:
             if (action.favorite) {
                 action.favorite.then(response => {
-                    if (response.status === 200 && response.data['success'] ) {
+                    if (response.status === 200 && response.data['success']) {
                         if (userStore.getUser !== null) {
                             const data = JSON.parse(response.data) || [];
                             const favorites = _favorites || [];
                             _favorites = Array.from(new Set([...data.map(dicToString), ...favorites.map(dicToString)])).map(stringToDic);
-                        }
-                        else {
+                        } else {
                             _favorites = null;
                         }
                         store.emitChange();
                     }
 
                 })
-            }
-            else {
+            } else {
                 _favorites = null;
                 store.emitChange();
             }
@@ -75,11 +72,9 @@ dispatcher.register((action) => {
         case actionTypes.CHANGE_FAVORITES:
             if (!_favorites) {
                 _favorites = [action.favorite];
-            }
-            else if (_favorites.indexOf(action.favorite) !== -1) {
+            } else if (_favorites.indexOf(action.favorite) !== -1) {
                 _favorites = _favorites.filter(favorite => favorite !== action.favorite);
-            }
-            else {
+            } else {
                 _favorites = [..._favorites, action.favorite];
             }
             store.emitChange();
@@ -93,11 +88,6 @@ dispatcher.register((action) => {
         default:
     }
 });
-
-
-
-
-
 
 
 export default store;

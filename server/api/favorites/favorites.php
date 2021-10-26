@@ -5,6 +5,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 
 /**
+ * return response with all favorites list par user from DB
  * @throws JsonException
  */
 function getFavorite(Request $request, Response $response): Response
@@ -12,7 +13,7 @@ function getFavorite(Request $request, Response $response): Response
     $input = $request->getParsedBody();
 
     $result = array();
-    if (findFavorites($input['id_login'], $result)) {
+    if (findFavorites($input['id_login'], $result)|| empty($result)) {
         return notFoundResponse($response);
     }
 
@@ -22,6 +23,8 @@ function getFavorite(Request $request, Response $response): Response
 
 
 /**
+ * save in DB new favorites list of user
+ *
  * @throws JsonException
  */
 function updateFavorite(Request $request, Response $response): Response
@@ -32,8 +35,8 @@ function updateFavorite(Request $request, Response $response): Response
         return $response->withJson(['error' => 'Invalid input'], 422);
     }
 //    $input['favorites'] = htmlentities(strip_tags((string)(json_encode($input['favorites'])))); // add after qa
-    $result =[] ;
-    if (findFavorites($input['id_login'],$result)) {
+    $result = [];
+    if (findFavorites($input['id_login'], $result)|| empty($result)) {
         return notFoundResponse($response);
     }
 
@@ -41,13 +44,23 @@ function updateFavorite(Request $request, Response $response): Response
     return $response->withStatus(201);
 }
 
-
-function notFoundResponse($response)
+/**
+ * return response with code 404
+ * @param Response $response
+ * @return Response
+ */
+function notFoundResponse(Response $response): Response
 {
     return $response->withJson("Not Found Response", 404);
 }
 
-
+/**
+ * func make query from DB get favorite list of user and save result in param $retData
+ *
+ * @param int $userId
+ * @param array $retData
+ * @return int
+ */
 function findFavorites(int $userId, array &$retData): int
 {
     try {
@@ -77,19 +90,22 @@ function findFavorites(int $userId, array &$retData): int
         }
         return 0;
     } catch (Throwable $t) {
+        log_error('sql exception findFavorites in favorites',$t);
         return 1;
     }
 
 }
 
 /**
+ * func make query from DB get favorite list of user and return how much row change
  * @param array $input
  * @return int
  * @throws JsonException
  */
 function favoriteUpdate(array $input): int
 {
-    $statement = "
+    try {
+        $statement = "
             UPDATE favorite
             SET
                 favorites = :favorites
@@ -97,14 +113,17 @@ function favoriteUpdate(array $input): int
         ";
 
 
-    $db = new db();
-    $db = $db->connect();
-    $statement = $db->prepare($statement);
-    $statement->execute(array(
-        'user_id' => $input['id_login'],
-        'favorites' => json_encode($input['favorites'], JSON_THROW_ON_ERROR),
-    ));
-    $db = null;
+        $db = new db();
+        $db = $db->connect();
+        $statement = $db->prepare($statement);
+        $statement->execute(array(
+            'user_id' => $input['id_login'],
+            'favorites' => json_encode($input['favorites'], JSON_THROW_ON_ERROR),
+        ));
+        $db = null;
+    } catch (Throwable $t) {
+        log_error('sql exception favoriteUpdate in favorites',$t);
+    }
     return $statement->rowCount();
 
 }

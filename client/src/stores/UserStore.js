@@ -1,7 +1,7 @@
-import { EventEmitter } from "events";
+import {EventEmitter} from "events";
 import dispatcher from "../utils/appDispatcher"
 import actionTypes from "../actions/actionTypes";
-import { UpdateFavorites } from "../actions/favoriteActions";
+import {UpdateFavorites} from "../actions/favoriteActions";
 
 const CHANGE_EVENT = "change";
 let _user = null;
@@ -27,6 +27,7 @@ class UserStore extends EventEmitter {
     getUser() {
         return _user;
     }
+
     getMassege() {
         return _massege;
     }
@@ -44,8 +45,7 @@ dispatcher.register((action) => {
                 if (response.status === 201 && response.data['success']) {
                     _user = response.data;
                     _massege = '';
-                }
-                else {
+                } else {
                     _user = null;
                     _massege = response.data;
                 }
@@ -63,8 +63,7 @@ dispatcher.register((action) => {
                 if (response.status === 200 && response.data['success']) {
                     _user = response.data;
                     _massege = '';
-                }
-                else {
+                } else {
                     _user = null;
                     _massege = response.data;
                 }
@@ -99,6 +98,9 @@ dispatcher.register((action) => {
                     _user = null;
                     store.emitChange();
                 }
+            }).catch(() => {
+                _user = null;
+                store.emitChange();
             });
             break;
         default:

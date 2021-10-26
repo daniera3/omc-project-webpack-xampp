@@ -1,39 +1,39 @@
 import React from "react";
-import { createTheme, ThemeProvider as Provider } from "@material-ui/core/styles";
+import {createTheme, ThemeProvider as Provider} from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-const ThemeProvider = ({ children }) => {
-  const overrides = {
-    MuiTab: {
-      root: {
-        backgroundColor: "#303030",
-      },
-    },
-  };
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        overrides,
-        palette: {
-          type: "dark",
-          primary: {
-            main: "#84ffff",
-          },
-          error: {
-            main: "#f06292",
-          },
+const ThemeProvider = ({children}) => {
+    const overrides = {
+        MuiTab: {
+            root: {
+                backgroundColor: "#303030",
+            },
         },
-      }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+    };
+    const theme = React.useMemo(
+        () =>
+            createTheme({
+                overrides,
+                palette: {
+                    type: "dark",
+                    primary: {
+                        main: "#84ffff",
+                    },
+                    error: {
+                        main: "#f06292",
+                    },
+                },
+            }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        []
+    );
 
-  return (
-    <Provider theme={theme}>
-      <CssBaseline />
-      {children}
-    </Provider>
-  );
+    return (
+        <Provider theme={theme}>
+            <CssBaseline/>
+            {children}
+        </Provider>
+    );
 };
 
 export default ThemeProvider;

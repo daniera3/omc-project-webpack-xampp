@@ -7,9 +7,11 @@
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET
+SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET
+time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -27,10 +29,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `favorite`
 --
 
-CREATE TABLE `favorite` (
-  `id` int(4) NOT NULL,
-  `user_id` int(4) NOT NULL,
-  `favorites` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`favorites`))
+CREATE TABLE `favorite`
+(
+    `id`        int(4) NOT NULL,
+    `user_id`   int(4) NOT NULL,
+    `favorites` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`favorites`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -39,22 +42,26 @@ CREATE TABLE `favorite` (
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
-  `id` int(4) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` text NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `role` varchar(255) DEFAULT 'user'
+CREATE TABLE `user`
+(
+    `id`       int(4) NOT NULL,
+    `username` varchar(255) NOT NULL,
+    `password` text         NOT NULL,
+    `email`    varchar(255) DEFAULT NULL,
+    `role`     varchar(255) DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Triggers `user`
 --
-DELIMITER $$
-CREATE TRIGGER `create_favorites` AFTER INSERT ON `user` FOR EACH ROW INSERT INTO favorite (user_id)
-VALUES (NEW.id)
+DELIMITER
 $$
-DELIMITER ;
+CREATE TRIGGER `create_favorites`
+    AFTER INSERT
+    ON `user`
+    FOR EACH ROW INSERT INTO favorite (user_id)
+                 VALUES (NEW.id) $$
+DELIMITER;
 
 --
 -- Indexes for dumped tables
@@ -64,14 +71,14 @@ DELIMITER ;
 -- Indexes for table `favorite`
 --
 ALTER TABLE `favorite`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
@@ -82,13 +89,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `favorite`
 --
 ALTER TABLE `favorite`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int (4) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int (4) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

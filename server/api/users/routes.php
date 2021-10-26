@@ -9,7 +9,9 @@ require_once 'CSRF.php';
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-
+/**
+ * all routs under user uri
+ */
 $app->group('/user', function () {
     $this->post('/getAllUsers', function (Request $req, Response $res): Response {
         return getAllUsers($req, $res);
@@ -30,7 +32,7 @@ $app->group('/user', function () {
         return postUser($req, $res);
     })->add(new UserMiddleware());
     $this->get('/session', function (Request $req, Response $res): Response {
-        return sessionOpen($req, $res);
+        return isSessionOpen($req, $res);
     });
     $this->put('/updateRole', function (Request $req, Response $res): Response {
         return updateUser($req, $res);

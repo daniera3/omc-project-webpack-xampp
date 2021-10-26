@@ -7,7 +7,15 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class CSRF
 {
-    public function __invoke(Request $request, Response $response, $next)
+    /**
+     *
+     * auth user open he's session and check he's CSRF he sent in body of request and save in he's session if them equal
+     * @param Request $request
+     * @param Response $response
+     * @param $next
+     * @return Response
+     */
+    public function __invoke(Request $request, Response $response, $next): Response
     {
 
         $body = $request->getParsedBody() ?? [];

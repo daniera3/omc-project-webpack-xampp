@@ -1,0 +1,13 @@
+[2021-10-26 15:31:45.765835] [debug] request:
+    0: 'user/login'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => '1snf2q3ibalt6ha6e3seb2mhlc',
+    )
+    3: array(
+        0 => 'username',
+        1 => 'password',
+    )
+[2021-10-26 15:31:45.854495] [debug] response:
+    0: 200
+    1: 'OK'

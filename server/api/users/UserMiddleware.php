@@ -6,7 +6,14 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class UserMiddleware
 {
-    public function __invoke(Request $request, Response $response, $next)
+    /**
+     * validates middleware check if user sent all arg in request
+     * @param Request $request
+     * @param Response $response
+     * @param $next
+     * @return Response
+     */
+    public function __invoke(Request $request, Response $response, $next): Response
     {
         $data = $request->getParsedBody();
         $data['username'] = htmlentities(strip_tags((string)($data['username'] ?? "")));

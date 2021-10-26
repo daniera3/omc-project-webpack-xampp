@@ -12,6 +12,7 @@ require '../../server/src/config/initialize.php';
 $c = new Container();
 $c['errorHandler'] = static function ($c) {
     return static function ($request, $response, $exception) use ($c) {
+        log_error('exception:', $exception);
         return $response->withStatus(500)
             ->withHeader('Content-Type', ' *')
             ->write(json_encode($exception, JSON_THROW_ON_ERROR));
@@ -19,15 +20,40 @@ $c['errorHandler'] = static function ($c) {
 };
 $c['phpErrorHandler'] = static function ($c) {
     return static function ($request, $response, $exception) use ($c) {
+        log_error('exception:', $exception);
         return $response->withStatus(500)->withJson($exception);
     };
 };
 $app = new App($c);
 
 $app->add(function ($req, $res, $next) {
-    $uri = $req->getUri();
-    // echo $uri;
+
+    log_info('request:',
+        $req->getUri()->getPath(),
+        $req->getMethod(),
+//        $req->getHeaders(),
+        $req->getCookieParams(),
+//        $req->getUploadedFiles(),
+        array_keys($req->getParsedBody())
+    );
+
+    log_request('',
+        $req->getUri()->getPath(),
+        $req->getMethod(),
+//        $req->getHeaders(),
+        $req->getCookieParams(),
+//        $req->getUploadedFiles(),
+        array_keys($req->getParsedBody())
+    );
+
     $response = $next($req, $res);
+
+    log_info('response:',  $response->getStatusCode(),$response->getReasonPhrase());
+    if ((int)($response->getStatusCode() / 100) === 2) {
+        log_response_pass('',$response->getStatusCode(),$response->getReasonPhrase());
+    } else {
+        log_response_fail('', $response->getStatusCode(),$response->getReasonPhrase());
+    }
     return $response
         // ->withHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
         // ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
@@ -52,9 +78,8 @@ require '../../server/api/users/routes.php';
 try {
     $app->run();
 } catch (MethodNotAllowedException | NotFoundException | Exception $e) {
-    echo json_encode([
-        "error"=>"API failure"
-    ]);
+    log_error("API failure", $e);
+
 }
 
 ?>

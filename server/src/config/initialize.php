@@ -9,4 +9,5 @@ require_once(__DIR__ . DS . "bootstrap.php");
 //load the config file
 require_once(__DIR__ . DS . "db.php");
 
-
+//load the log
+require_once(__DIR__ . DS . "log.php");

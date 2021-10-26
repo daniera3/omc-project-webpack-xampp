@@ -1,5 +1,9 @@
 <?php
 
+
+/**
+ * DB class make connect to db  with ENV args
+ */
 class db
 {
     private string $dbhost;

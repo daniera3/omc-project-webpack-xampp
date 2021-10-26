@@ -1,8 +1,6 @@
 import dispatcher from "../utils/appDispatcher"
 import actionTypes from "./actionTypes";
-import { getFavoritesFetch } from "../hooks/useFavoritesFetch";
-
-
+import {getFavoritesFetch} from "../hooks/useFavoritesFetch";
 
 
 export function changeFavorite(favorite) {
@@ -27,10 +25,6 @@ export function userLogout() {
 }
 
 
-  
-  
-  
-
 //     function storageFavorites() {
 //       if (!favorites) {
 //         let userFavorites = userStore.getUser() !== null ? fetchFavorites() : [];
@@ -41,17 +35,13 @@ export function userLogout() {
 //         localStorage.setItem('favorites', JSON.stringify(favorites));
 //       }
 //     }
-  
+
 //     return { favorites, setFavorits };
 //   };
-  
-
-
 
 
 // export const useFavoritesFetch = () => {
 //   const [favorites, setFavorits] = useState();
-
 
 
 //   useEffect(() => {

@@ -1,13 +1,13 @@
 import dispatcher from "../utils/appDispatcher"
 import actionTypes from "./actionTypes";
-import  {register,login,logout,getSession}  from "../hooks/useUserFetch";
+import {getSession, login, logout, register} from "../hooks/useUserFetch";
 
 
 export function userRegister(user) {
 
     dispatcher.dispatch({
         actionTypes: actionTypes.REGISTER_USER,
-        user:register(user),
+        user: register(user),
 
     });
 }
@@ -33,7 +33,7 @@ export function userLogout() {
 export function loginUserSessien() {
     dispatcher.dispatch({
         actionTypes: actionTypes.LOGIN_USER_SESSIEN,
-        user:getSession(),
+        user: getSession(),
     });
 
 }

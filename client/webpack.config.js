@@ -16,10 +16,10 @@ module.exports = env => {
         ],
         entry: [
             path.resolve(__dirname, 'src', 'index.js'),
-           
+
         ],
         output: {
-            path: path.resolve(__dirname, '..','html'),
+            path: path.resolve(__dirname, '..', 'html'),
             filename: 'bundle.js',
         },
         module: {
