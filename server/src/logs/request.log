@@ -1,0 +1,288 @@
+[2021-11-01 9:01:57.146795] [info] 
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:01:57.197500] [info] 
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:01:57.205022] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:01:59.547385] [info] 
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:02:05.985443] [info] 
+    0: 'user/login'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: array(
+        0 => 'username',
+        1 => 'password',
+    )
+[2021-11-01 9:02:06.130465] [info] 
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:02:06.138771] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:04:18.519217] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:04:18.561014] [info] 
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:09:53.107075] [info] 
+    0: 'user/session'
+    1: 'GET'
+    2: array()
+    3: NULL
+[2021-11-01 9:09:53.151798] [info] 
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:09:58.865612] [info] 
+    0: 'user/login'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'username',
+        1 => 'password',
+    )
+[2021-11-01 9:09:59.018888] [info] 
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:09:59.041254] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:11:55.237083] [info] 
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:11:55.289407] [info] 
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:11:55.306914] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:12:44.485116] [info] 
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:12:44.535115] [info] 
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:12:44.554446] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:12:54.772059] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:13:17.484132] [info] 
+    0: 'user/isAdmin'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:13:17.539098] [info] 
+    0: 'user/getAllUsers'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:13:21.047169] [info] 
+    0: 'user/updateRole'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'id',
+        1 => 'role',
+    )
+[2021-11-01 9:13:22.551661] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:13:24.991355] [info] 
+    0: 'user/update'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'id',
+        1 => 'email',
+    )
+[2021-11-01 9:13:29.533483] [info] 
+    0: 'favorites/'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'favorites',
+        1 => 'sender',
+    )
+[2021-11-01 9:16:28.446587] [info] 
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:16:28.502351] [info] 
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:16:28.517543] [info] 
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:16:31.442698] [info] 
+    0: 'favorites/'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'favorites',
+        1 => 'sender',
+    )
+[2021-11-01 9:16:32.523437] [info] 
+    0: 'favorites/'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'favorites',
+        1 => 'sender',
+    )
+[2021-11-01 9:16:43.438834] [info] 
+    0: 'favorites/'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'favorites',
+        1 => 'sender',
+    )
+[2021-11-01 9:16:47.800817] [info] 
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:17:20.596684] [info] 
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:17:20.642791] [info] 
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )

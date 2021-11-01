@@ -1,0 +1,576 @@
+[2021-11-01 9:01:57.150136] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:01:57.205022] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:01:57.208684] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:01:59.550050] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:02:06.068156] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:02:06.151186] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:02:06.152501] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:04:18.564068] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:09:53.154653] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:09:58.952724] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:09:59.032900] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:09:59.045665] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:11:55.240386] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:11:55.294014] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:11:55.309542] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:12:44.487226] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:12:44.539177] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:12:44.557748] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:12:54.773852] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:13:17.486085] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:13:17.544111] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:13:21.082428] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:13:22.554060] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:13:25.004815] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:16:28.451164] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:16:28.507026] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:16:28.520103] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:16:33.549210] [info] 
+    0: 201
+    1: 'Created'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => NULL,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:16:35.636533] [info] 
+    0: 201
+    1: 'Created'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => NULL,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:16:45.552592] [info] 
+    0: 201
+    1: 'Created'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => NULL,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:16:47.803265] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))
+[2021-11-01 9:17:20.647386] [info] 
+    0: 200
+    1: 'OK'
+    2: Slim\Http\Body::__set_state(array(
+         'stream' => NULL,
+         'meta' => array(
+            'wrapper_type' => 'PHP',
+            'stream_type' => 'TEMP',
+            'mode' => 'w+b',
+            'unread_bytes' => 0,
+            'seekable' => true,
+            'uri' => 'php://temp',
+        ),
+         'readable' => true,
+         'writable' => true,
+         'seekable' => true,
+         'size' => NULL,
+    ))

@@ -1,0 +1,548 @@
+[2021-11-01 9:01:57.146600] [debug] request:
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:01:57.150027] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => true,
+        'token' => '549d34766a117d56d6e828f9e2818217a572885182200885f73b3a1a4c31a0b70f6198acd54191925359362a4db9cc630e23',
+    )
+[2021-11-01 9:01:57.197357] [debug] request:
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:01:57.202133] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:01:57.202714] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'favorites' => '[]',
+        'token' => 'd4b9568fb9c70eb322bf3b9b7c27939616b931894abf549847525cadb0a83135c0f3dfcbb23aab1ee872d0aef8b8fb3a3db6',
+    )
+[2021-11-01 9:01:57.208607] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'id' => 52,
+        'username' => 'dani',
+        'email' => 'dani@danisada',
+        'token' => 'a83d37457fabf4297c57de435152cbe1b320c9908e94f8be64b8020555a19604b494b481f79ca640a43a359c635dc2e829d8',
+    )
+[2021-11-01 9:01:59.547260] [debug] request:
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:01:59.550002] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => 'logged out',
+    )
+[2021-11-01 9:02:05.985340] [debug] request:
+    0: 'user/login'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: array(
+        0 => 'username',
+        1 => 'password',
+    )
+[2021-11-01 9:02:06.068099] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => true,
+        'token' => '9f9f38940efda21f2b24de7c17c91843f3bc676b87601bb604f4c82a5a818057992dd8f87af4ac97e01e50afd1865cd86db4',
+    )
+[2021-11-01 9:02:06.130337] [debug] request:
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:02:06.138689] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:02:06.151124] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'favorites' => '[]',
+        'token' => '5466aa76cb2e8b9a0791b6c2089c3cf10e2818a695950b5fa4a3300cbe974e1bc111f66d272ea6cc05b0d5169e7b68597607',
+    )
+[2021-11-01 9:02:06.152447] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'id' => 52,
+        'username' => 'dani',
+        'email' => 'dani@danisada',
+        'token' => '50b5be020f73edf7b66303e3970eef0fdab39047d556799498d3e9f2f82cc66c2a6d417d66172f45888c4024182094f81518',
+    )
+[2021-11-01 9:04:18.519033] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: NULL
+[2021-11-01 9:04:18.521739] [debug] response:
+    0: 401
+    1: 'Unauthorized'
+    2: array(
+        'error' => 'CSRF token not found',
+        'success' => false,
+    )
+[2021-11-01 9:04:18.560847] [debug] request:
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'gobo2p07m0jicp8p57mn0d82hj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:04:18.564013] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => 'logged out',
+    )
+[2021-11-01 9:09:53.106923] [debug] request:
+    0: 'user/session'
+    1: 'GET'
+    2: array()
+    3: NULL
+[2021-11-01 9:09:53.110300] [debug] response:
+    0: 401
+    1: 'Unauthorized'
+    2: array(
+        'error' => 'session not found',
+    )
+[2021-11-01 9:09:53.151653] [debug] request:
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:09:53.154582] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => 'logged out',
+    )
+[2021-11-01 9:09:58.865506] [debug] request:
+    0: 'user/login'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'username',
+        1 => 'password',
+    )
+[2021-11-01 9:09:58.952667] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => true,
+        'token' => '257c055b8a8728ab9b63f6609c9cdc126bb6f8c55a519d32923f5bd9bf359fe7df7b6b6abd64c3154842e123048bf22521d6',
+    )
+[2021-11-01 9:09:59.018779] [debug] request:
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:09:59.032845] [debug] response:
+    0: 200
+    1: 'OK'
+    2: NULL
+[2021-11-01 9:09:59.041173] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:09:59.045612] [debug] response:
+    0: 200
+    1: 'OK'
+    2: NULL
+[2021-11-01 9:11:55.236973] [debug] request:
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:11:55.240294] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => true,
+        'token' => '744dd8062c579bcbb2e6fa857a64e9a72e9c612a83c1761825b8bca52d99b564eb7f6f773a43df326ea79ce38282760e38ca',
+    )
+[2021-11-01 9:11:55.289300] [debug] request:
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:11:55.293932] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'favorites' => '[]',
+    )
+[2021-11-01 9:11:55.306839] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:11:55.309425] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'id' => 52,
+        'username' => 'dani',
+        'email' => 'dani@danisada',
+    )
+[2021-11-01 9:12:44.484988] [debug] request:
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:12:44.487174] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => true,
+        'token' => 'f1a0db43d27d5a11b7d08db1194defbaf5dd36d764ea0e8f56a62050e826dd4a57871a4317bc48e93e28a12fd392f11304cb',
+    )
+[2021-11-01 9:12:44.534991] [debug] request:
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:12:44.539117] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'favorites' => '[]',
+    )
+[2021-11-01 9:12:44.554374] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:12:44.557698] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'id' => 52,
+        'username' => 'dani',
+        'email' => 'dani@danisada',
+    )
+[2021-11-01 9:12:54.771954] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:12:54.773814] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'id' => 52,
+        'username' => 'dani',
+        'email' => 'dani@danisada',
+    )
+[2021-11-01 9:13:17.484016] [debug] request:
+    0: 'user/isAdmin'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:13:17.486038] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => true,
+        'withCredentials' => true,
+    )
+[2021-11-01 9:13:17.538959] [debug] request:
+    0: 'user/getAllUsers'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:13:17.543986] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        0 => array(
+            'id' => 55,
+            'username' => 'a',
+            'role' => 'user',
+        ),
+        1 => array(
+            'id' => 56,
+            'username' => 'v',
+            'role' => 'user',
+        ),
+        2 => array(
+            'id' => 57,
+            'username' => 'gena',
+            'role' => 'admin',
+        ),
+        3 => array(
+            'id' => 58,
+            'username' => 'gena123',
+            'role' => 'user',
+        ),
+        4 => array(
+            'id' => 59,
+            'username' => 'gena1233',
+            'role' => 'user',
+        ),
+        5 => array(
+            'id' => 61,
+            'username' => 'da',
+            'role' => 'user',
+        ),
+        6 => array(
+            'id' => 62,
+            'username' => 'as',
+            'role' => 'user',
+        ),
+    )
+[2021-11-01 9:13:21.047055] [debug] request:
+    0: 'user/updateRole'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'id',
+        1 => 'role',
+    )
+[2021-11-01 9:13:21.082369] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'text' => 'User updated',
+    )
+[2021-11-01 9:13:22.551542] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:13:22.554002] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'id' => 52,
+        'username' => 'dani',
+        'email' => 'dani@danisada',
+    )
+[2021-11-01 9:13:24.991245] [debug] request:
+    0: 'user/update'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'id',
+        1 => 'email',
+    )
+[2021-11-01 9:13:25.004570] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'text' => 'User updated',
+    )
+[2021-11-01 9:13:29.533348] [debug] request:
+    0: 'favorites/'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'favorites',
+        1 => 'sender',
+    )
+[2021-11-01 9:16:28.446403] [debug] request:
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:16:28.451083] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => true,
+        'token' => 'e8af247c319f5982bcdfa83a009eb114f3eed9c75ff79e9fabda1101bede51e3f76f01ed3e8fad4ec6e17553e50908071181',
+    )
+[2021-11-01 9:16:28.502269] [debug] request:
+    0: 'favorites/getAllPerUser'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:16:28.506851] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'favorites' => '[{"gender":"male","name":{"title":"Mr","first":"Angel","last":"Cooper"},"location":{"street":{"number":8634,"name":"West Street"},"city":"Chichester","state":"County Antrim","country":"United Kingdom","postcode":"EZ7L 6DE","coordinates":{"latitude":"6.5761","longitude":"-102.0652"},"timezone":{"offset":"+4:00","description":"Abu Dhabi, Muscat, Baku, Tbilisi"}},"email":"angel.cooper@example.com","login":{"uuid":"029df321-cfbd-4ae0-809f-6fe706e14e36","username":"organicwolf449","password":"336699","salt":"U0UZO5cF","md5":"f5359db5b1a0c2723422eb1d01f01008","sha1":"5d03511f6c34e4c2ee4ab4ef4a3df5c74c392bc5","sha256":"44d4381a90ac9eb86db9ec655808fea327267051f8e6c6b9179c324ab89b9daf"},"dob":{"date":"1996-11-29T01:13:52.804Z","age":25},"registered":{"date":"2018-02-01T15:04:32.456Z","age":3},"phone":"017687 19353","cell":"0712-456-539","id":{"name":"NINO","value":"KS 86 70 89 U"},"picture":{"large":"https:\/\/randomuser.me\/api\/portraits\/men\/49.jpg","medium":"https:\/\/randomuser.me\/api\/portraits\/med\/men\/49.jpg","thumbnail":"https:\/\/randomuser.me\/api\/portraits\/thumb\/men\/49.jpg"},"nat":"GB"}]',
+    )
+[2021-11-01 9:16:28.517455] [debug] request:
+    0: 'user/details'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:16:28.520057] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'id' => 52,
+        'username' => 'dani',
+        'email' => 'dani@danisada',
+    )
+[2021-11-01 9:16:31.442626] [debug] request:
+    0: 'favorites/'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'favorites',
+        1 => 'sender',
+    )
+[2021-11-01 9:16:32.523332] [debug] request:
+    0: 'favorites/'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'favorites',
+        1 => 'sender',
+    )
+[2021-11-01 9:16:33.549151] [debug] response:
+    0: 201
+    1: 'Created'
+    2: NULL
+[2021-11-01 9:16:35.636313] [debug] response:
+    0: 201
+    1: 'Created'
+    2: NULL
+[2021-11-01 9:16:43.438766] [debug] request:
+    0: 'favorites/'
+    1: 'PUT'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'favorites',
+        1 => 'sender',
+    )
+[2021-11-01 9:16:45.552380] [debug] response:
+    0: 201
+    1: 'Created'
+    2: NULL
+[2021-11-01 9:16:47.800723] [debug] request:
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:16:47.803220] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => 'logged out',
+    )
+[2021-11-01 9:17:20.596541] [debug] request:
+    0: 'user/session'
+    1: 'GET'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: NULL
+[2021-11-01 9:17:20.600433] [debug] response:
+    0: 401
+    1: 'Unauthorized'
+    2: array(
+        'error' => 'session not found',
+    )
+[2021-11-01 9:17:20.642676] [debug] request:
+    0: 'user/logout'
+    1: 'POST'
+    2: array(
+        'PHPSESSID' => 'ifs8c23raqtvmk0q0us7k339tj',
+    )
+    3: array(
+        0 => 'withCredentials',
+    )
+[2021-11-01 9:17:20.647336] [debug] response:
+    0: 200
+    1: 'OK'
+    2: array(
+        'success' => 'logged out',
+    )

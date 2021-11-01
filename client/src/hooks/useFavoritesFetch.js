@@ -1,4 +1,5 @@
-import {favoriteStore, userStore} from "../stores";
+import {favoriteStore, userStore,socketStore} from "../stores";
+
 import axios from "axios";
 
 
@@ -12,7 +13,7 @@ export function getFavoritesFetch() {
 
 export const putFavoritesFetch = () => {
 
-    return axios.put('favorites/', {'favorites': favoriteStore.getFavoritesArray()});
+    return axios.put('favorites/', {'favorites': favoriteStore.getFavoritesArray(),'sender':socketStore.getRandom()});
 
 }
 
