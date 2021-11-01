@@ -9,20 +9,35 @@ import {isAdmin} from "./hooks/useUserFetch";
 import Spinner from "./components/Spinner";
 import * as history from "./utils/History"
 import axios from 'axios';
-
+import { setToken } from "./actions/tokenActions";
+import {tokenStore}  from "./stores"
 
 /**
  * axios interceptors
  *
  * logout form user if you lose session or  has expired
  */
-axios.interceptors.response.use(undefined, (err) => {
+axios.interceptors.response.use(acc=>{
+
+    if(acc.data && acc.data['token'])
+    {
+
+        setToken(acc.data['token']);
+    }
+    return Promise.resolve(acc)
+}, (err) => {
     if (err.response.status === 401 || err.response.data.massage === '401 Unauthorized') {
         userLogout();
 
     }
     return Promise.reject(err);
 })
+
+
+axios.interceptors.request.use(req => {
+    req.headers.CSRF=tokenStore.getToken();
+    return req;
+});
 
 
 /**
@@ -84,8 +99,7 @@ class AdminRoute extends React.Component {
         isAdmin().then(
             response => {
                 if (response.data['success'] === true) {
-
-                    this.setState({admin: <this.props.component {...(response.data)} />})
+                    this.setState({admin: <this.props.component  />})
                 } else {
                     alert('you not un admin goodbye :P');
                     this.setState({admin: <Redirect to={{pathname: '/'}}/>})
@@ -101,11 +115,13 @@ class AdminRoute extends React.Component {
 
     render() {
         return (
-            <Route render={() => {
+            <Route render={(props) => {
                 this.state.admin === <Redirect to={{pathname: '/'}}/>
                     ? this.props.setValue(0)
                     : this.props.setValue()
-                return this.state.admin;
+                return React.cloneElement(
+                    this.state.admin, 
+                    { ...props});
             }
             }
             />
@@ -146,12 +162,13 @@ class AppRouter extends React.Component {
                 return 0;
         }
     }
-
-    componentDidMount() {
-        this.setValue(this.urlSwitch());
+    componentWillMount(){
         if (!userStore.getUser()) {
             loginUserSessien();
         }
+    }
+    componentDidMount() {
+        this.setValue(this.urlSwitch());
     }
 
 

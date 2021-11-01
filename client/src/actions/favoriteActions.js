@@ -10,10 +10,11 @@ export function changeFavorite(favorite) {
     });
 }
 
-export function UpdateFavorites() {
+export function UpdateFavorites(flag=false) {
     dispatcher.dispatch({
         actionTypes: actionTypes.UPDATE_FAVORITES,
         favorite: getFavoritesFetch(),
+        flag:flag,
     });
 }
 

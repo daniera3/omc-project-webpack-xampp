@@ -3,9 +3,11 @@
     "symfony/dotenv": "^5.3",
     "ext-pdo": "*",
     "slim/slim": "3.1",
-    "guzzlehttp/psr7": "^2.1",
+    "guzzlehttp/psr7": "^1.8.3",
     "ext-json": "*",
-    "katzgrau/klogger": "^1.2"
+    "katzgrau/klogger": "^1.2",
+    "cboden/ratchet": "^0.4.3",
+    "textalk/websocket": "^1.5"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"

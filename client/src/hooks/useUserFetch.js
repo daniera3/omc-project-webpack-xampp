@@ -34,15 +34,15 @@ export const getProfile = () => {
 
 }
 
-export const getAllUsers = (token) => {
-    return axios.post('user/getAllUsers', {'token': (token)}, {withCredentials: true});
+export const getAllUsers = () => {
+    return axios.post('user/getAllUsers', {withCredentials: true});
 
 }
 
 
-export const updateRole = (token) => {
+export const updateRole = (data) => {
 
-    return axios.put('user/updateRole', token, {withCredentials: true});
+    return axios.put('user/updateRole', data, {withCredentials: true});
 
 }
 

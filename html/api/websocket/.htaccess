@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+#ProxyPass / http://localhost:8080/
+#RewriteEngine on
+#RewriteCond %{HTTP:Upgrade} websocket [NC]
+#RewriteCond %{HTTP:Connection} upgrade [NC]
+#RewriteRule ^/?(.*) "ws://localhost:8080/$1" [P,L]

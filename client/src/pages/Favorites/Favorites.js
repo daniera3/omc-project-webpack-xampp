@@ -10,7 +10,6 @@ class Favorites extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(1.15);
         this.state = {favorites: favoriteStore.getFavoritesArray()}
         this.onChange = this.onChange.bind(this);
     }

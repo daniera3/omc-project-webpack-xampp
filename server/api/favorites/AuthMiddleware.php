@@ -14,7 +14,7 @@ class AuthMiddleware
      * @param Response $response
      * @param  $next
      * @return Response
-     *
+     * @throws Exception
      */
     public function __invoke(Request $request, Response $response, $next): Response
     {
@@ -24,6 +24,8 @@ class AuthMiddleware
             $parsedBody["id_login"] = $_SESSION['id'];
             $parsedBody["role_login"] = $_SESSION['role'];
             $request = $request->withParsedBody($parsedBody);
+
+
             return $next($request, $response);
         }
         return $response->withJson(['error' => 'Unauthorized'], 401);

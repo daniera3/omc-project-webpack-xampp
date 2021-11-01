@@ -34,7 +34,7 @@ $app->add(function ($req, $res, $next) {
 //        $req->getHeaders(),
         $req->getCookieParams(),
 //        $req->getUploadedFiles(),
-        array_keys($req->getParsedBody())
+        !empty($req->getParsedBody()) ? array_keys($req->getParsedBody()): null
     );
 
     log_request('',
@@ -43,14 +43,13 @@ $app->add(function ($req, $res, $next) {
 //        $req->getHeaders(),
         $req->getCookieParams(),
 //        $req->getUploadedFiles(),
-        array_keys($req->getParsedBody())
+        !empty($req->getParsedBody()) ? array_keys($req->getParsedBody()): null
     );
 
     $response = $next($req, $res);
-
-    log_info('response:',  $response->getStatusCode(),$response->getReasonPhrase());
+    log_info('response:',  $response->getStatusCode(),$response->getReasonPhrase(),json_decode($response->getBody(),true));
     if ((int)($response->getStatusCode() / 100) === 2) {
-        log_response_pass('',$response->getStatusCode(),$response->getReasonPhrase());
+        log_response_pass('',$response->getStatusCode(),$response->getReasonPhrase(), $response->getBody());
     } else {
         log_response_fail('', $response->getStatusCode(),$response->getReasonPhrase());
     }
@@ -82,4 +81,3 @@ try {
 
 }
 
-?>

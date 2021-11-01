@@ -1,7 +1,11 @@
-import {EventEmitter} from "events";
+import { EventEmitter } from "events";
 import dispatcher from "../utils/appDispatcher"
 import actionTypes from "../actions/actionTypes";
-import {UpdateFavorites} from "../actions/favoriteActions";
+import { UpdateFavorites } from "../actions/favoriteActions";
+import { w3cwebsocket } from "websocket";
+import { setConnect } from "../actions/socketActions";
+import { socketStore } from ".";
+import { getProfile } from "../hooks/useUserFetch";
 
 const CHANGE_EVENT = "change";
 let _user = null;
@@ -9,6 +13,7 @@ let _user = null;
 let _massege = '';
 
 class UserStore extends EventEmitter {
+
     addChangeListener(callback) {
         this.on(CHANGE_EVENT, callback);
     }
@@ -18,8 +23,27 @@ class UserStore extends EventEmitter {
     }
 
     emitChange() {
+
         if (_user !== null) {
+            setConnect(new w3cwebsocket('ws://127.0.0.1:8080'))
+            socketStore.getSocket().onopen = () => {
+                getProfile().then(response => {
+                    if (response.status === 200) {
+                        socketStore.getSocket().send(JSON.stringify({ 'info':response.data  }))
+                    }
+                });
+            }
+            socketStore.getSocket().onmessage = (e) => {
+                const data = JSON.parse(e.data);
+                if (data['massage'] === 'updata' && data['sender']!== socketStore.getRandom() ) {
+                    UpdateFavorites(false);
+                }
+            }
+
             UpdateFavorites();
+        }
+        else {
+            socketStore.getSocket().close();
         }
         this.emit(CHANGE_EVENT);
     }
@@ -59,7 +83,9 @@ dispatcher.register((action) => {
             break;
 
         case actionTypes.LOGIN_USER:
+
             action.user.then(response => {
+
                 if (response.status === 200 && response.data['success']) {
                     _user = response.data;
                     _massege = '';
@@ -70,6 +96,7 @@ dispatcher.register((action) => {
                 store.emitChange();
             })
                 .catch((e) => {
+
                     console.log(e)
                     _user = null;
                     _massege = "Username and/or Password incorrect";

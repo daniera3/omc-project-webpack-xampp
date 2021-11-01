@@ -50,12 +50,14 @@ function getAllUsers(Request $request, Response $response): Response
  */
 function getUserDetail(Request $request, Response $response): Response
 {
+    $data = $request->getParsedBody();
     openSession($request);
     if (isset($_SESSION) && !empty($_SESSION)) {
         $user = [
             "id" => $_SESSION['id'],
             "username" => $_SESSION["username"],
-            "email" => $_SESSION['email'],
+            "email" => $_SESSION['email']
+
         ];
 
         return $response->withJson($user);
@@ -75,8 +77,6 @@ function getAdmin(Request $request, Response $response): Response
 {
     $data = $request->getParsedBody();
     if (isset($data['success']) && $data['success'] === true) {
-        $_SESSION['token'] = bin2hex(random_bytes(50));
-        $data['token'] = $_SESSION['token'];
         return $response->withJson($data);
     }
     return $response->withJson($data, 401);

@@ -26,14 +26,16 @@ class FavoritesStore extends EventEmitter {
         this.removeListener(CHANGE_EVENT, callback);
     }
 
-    emitChange($flag = true) {
-        if (userStore.getUser() !== null && $flag)
+    emitChange(flag = true) {
+        if (userStore.getUser() !== null && flag)
+        {
             putFavoritesFetch().then(response => {
                     if (response.status !== 201) {
                         alert("Error,cant save you`r change in you`r favorites list");
                     }
                 }
             )
+        }
         this.emit(CHANGE_EVENT);
     }
 
@@ -51,15 +53,15 @@ dispatcher.register((action) => {
         case actionTypes.UPDATE_FAVORITES:
             if (action.favorite) {
                 action.favorite.then(response => {
-                    if (response.status === 200 && response.data['success']) {
+                    if (response.status === 200 ) {
                         if (userStore.getUser !== null) {
-                            const data = JSON.parse(response.data) || [];
-                            const favorites = _favorites || [];
+                            const data = JSON.parse(response.data['favorites']) || [];
+                            const favorites =action.flag ? _favorites || []:[];
                             _favorites = Array.from(new Set([...data.map(dicToString), ...favorites.map(dicToString)])).map(stringToDic);
                         } else {
                             _favorites = null;
                         }
-                        store.emitChange();
+                        store.emitChange(action.flag);
                     }
 
                 })

@@ -1,6 +1,8 @@
 <?php
-require 'favorites.php';
+require_once 'favorites.php';
 require_once 'AuthMiddleware.php';
+require_once 'getCSRF.php';
+require_once 'CSRF.php';
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -19,4 +21,4 @@ $app->group('/favorites', function () {
         return updateFavorite($req, $res);
     });
 
-})->add(new AuthMiddleware());
+})->add(new AuthMiddleware())->add(new CSRF());

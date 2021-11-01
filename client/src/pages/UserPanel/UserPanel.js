@@ -4,7 +4,8 @@ import Select from "../../components/Select";
 import Text from "../../components/Text";
 import * as S from "./style";
 import Button from "../../components/Button";
-import {getAllUsers, updateRole} from "../../hooks/useUserFetch";
+import { getAllUsers, updateRole } from "../../hooks/useUserFetch";
+
 
 
 class UserPanel extends React.Component {
@@ -12,31 +13,35 @@ class UserPanel extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {massage: "", userList: undefined, parmission: "", selectedUser: ""};
+        this.state = { massage: "", userList: undefined, parmission: "", selectedUser: "" };
 
-        this.permissionsOptions = [{'value': 'admin', 'label': 'Admin'}, {'value': 'user', 'label': 'Regular'}];
+        this.permissionsOptions = [{ 'value': 'admin', 'label': 'Admin' }, { 'value': 'user', 'label': 'Regular' }];
         this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
-        getAllUsers(this.props.token).then(response => {
-                if (response.status === 200) {
-                    let data = response.data;
-                    let userList = data.map(e => {
-                        e['value'] = e['id'];
-                        e['label'] = e['username']
-                        return e;
 
-                    })
-                    this.setState({
-                        massage: '', userList
-                    });
-                } else {
-                    this.setState({massage: response.data, userList: undefined});
-                }
+        getAllUsers().then(response => {
+            if (response.status === 200) {
+                let data = response.data;
+                data = Object.values((delete data['token'], data))
+                let userList = data.map(e => {
+                    e['value'] = e['id'];
+                    e['label'] = e['username']
+                    return e;
+
+                })
+                this.setState({
+                    massage: '', userList
+                });
+            } else {
+                this.setState({ massage: response.data, userList: undefined });
+                this.props.history.push('/');
             }
+        }
         ).catch(() => {
-            this.setState({massage: '', userList: undefined});
+            this.setState({ massage: '', userList: undefined });
+            this.props.history.push('/');
         })
     }
 
@@ -46,7 +51,7 @@ class UserPanel extends React.Component {
             if (this.state.userList) {
                 let temp = this.state.userList.filter((user) => user['id'] === this.state.selectedUser)[0];
                 if (temp) {
-                    this.setState({parmission: temp['role']});
+                    this.setState({ parmission: temp['role'] });
                 }
             }
         }
@@ -54,7 +59,7 @@ class UserPanel extends React.Component {
 
 
     handleClick() {
-        const data = {'id': this.state.selectedUser, 'role': this.state.parmission, 'token': this.props.token}
+        const data = { 'id': this.state.selectedUser, 'role': this.state.parmission}
         updateRole(data).then(response => {
             if (response.status === 200) {
                 const userList = this.state.userList.map(user => {
@@ -66,21 +71,21 @@ class UserPanel extends React.Component {
                     }
                 });
 
-                this.setState({massage: 'save', userList});
+                this.setState({ massage: 'save', userList });
             } else {
-                this.setState({massage: response.data['error']});
+                this.setState({ massage: response.data['error'] });
             }
         }).catch(() => {
-            this.setState({massage: 'Sorry, we cant save you`r changes'});
+            this.setState({ massage: 'Sorry, we cant save you`r changes' });
         })
     }
 
     setSelectedUser(user) {
-        this.setState({selectedUser: user})
+        this.setState({ selectedUser: user })
     }
 
     setParmission(parm) {
-        this.setState({parmission: parm})
+        this.setState({ parmission: parm })
     }
 
     render() {
@@ -97,10 +102,10 @@ class UserPanel extends React.Component {
                 <S.Form className='form-group'>
                     <Text color='red' bold>{this.state.massage} </Text>
                     <Select label='Users' options={this.state.userList} value={this.state.selectedUser}
-                            setValue={this.setSelectedUser.bind(this)} def={this.state.selectedUser}/>
+                        setValue={this.setSelectedUser.bind(this)} def={this.state.selectedUser} />
                     <Select label='Permissions' options={this.permissionsOptions} value={this.state.parmission}
-                            setValue={this.setParmission.bind(this)} def={this.state.parmission}/>
-                    <Button label="UserPanel" color="primary" onClick={this.handleClick}/>
+                        setValue={this.setParmission.bind(this)} def={this.state.parmission} />
+                    <Button label="UserPanel" color="primary" onClick={this.handleClick} />
                 </S.Form>
 
             </S.Content>

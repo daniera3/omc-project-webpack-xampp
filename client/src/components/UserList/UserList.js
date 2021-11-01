@@ -17,7 +17,6 @@ class UserList extends React.Component {
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
         this.handleCheck = this.handleCheck.bind(this);
-
         this.setHoveredUserId = this.setHoveredUserId.bind(this);
         this.setSelectCountrys = this.setSelectCountrys.bind(this);
         this.setSelectedUsers = this.setSelectedUsers.bind(this);
@@ -105,7 +104,7 @@ class UserList extends React.Component {
                                 <S.IconButtonWrapper onClick={() => {
                                     this.handleClick(index)
                                 }}
-                                                     isVisible={index === this.state.hoveredUserId || (this.props.favorites && this.props.favorites.indexOf(user) !== -1)}>
+                                                     isVisible={index === this.state.hoveredUserId || (this.props.favorites  && this.props.favorites.indexOf(user) !== -1)}>
                                     <IconButton>
                                         <FavoriteIcon color="error"/>
                                     </IconButton>
@@ -126,9 +125,9 @@ class UserList extends React.Component {
 
 UserList.propTypes = {
     isLoading: PropTypes.bool.isRequired,
-    handleScroll: PropTypes.func.isRequired,
+    handleScroll: PropTypes.func,
     users: PropTypes.array.isRequired,
-    favorites: PropTypes.array.isRequired,
+    favorites: PropTypes.array,
 };
 
 

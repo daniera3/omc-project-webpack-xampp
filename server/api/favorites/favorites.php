@@ -13,13 +13,14 @@ function getFavorite(Request $request, Response $response): Response
     $input = $request->getParsedBody();
 
     $result = array();
-    if (findFavorites($input['id_login'], $result)|| empty($result)) {
+    if (findFavorites($input['id_login'], $result) || empty($result)) {
         return notFoundResponse($response);
     }
 
 
-    return $response->withJson(json_decode(json_encode($result[0], JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR)["favorites"]);
+    return $response->withJson(['favorites' => json_decode(json_encode($result[0], JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR)["favorites"]], 200);
 }
+
 
 
 /**
@@ -34,13 +35,17 @@ function updateFavorite(Request $request, Response $response): Response
     if (!isset($input['favorites'])) {
         return $response->withJson(['error' => 'Invalid input'], 422);
     }
-//    $input['favorites'] = htmlentities(strip_tags((string)(json_encode($input['favorites'])))); // add after qa
+    //    $input['favorites'] = htmlentities(strip_tags((string)(json_encode($input['favorites'])))); // add after qa
     $result = [];
-    if (findFavorites($input['id_login'], $result)|| empty($result)) {
+    if (findFavorites($input['id_login'], $result) || empty($result)) {
         return notFoundResponse($response);
     }
 
-    favoriteUpdate($input);
+    if (favoriteUpdate($input)) {
+        $client = new WebSocket\Client("ws://localhost:8080");
+        $client->text(json_encode(['massage'=>'updata','id'=>$input['id_login'],'sender'=>$input['sender']]));
+        $client->close();
+    }
     return $response->withStatus(201);
 }
 
@@ -86,14 +91,12 @@ function findFavorites(int $userId, array &$retData): int
                 "favorites" => strval($r["favorites"])
             ];
             $retData[] = $data;
-
         }
         return 0;
     } catch (Throwable $t) {
-        log_error('sql exception findFavorites in favorites',$t);
+        log_error('sql exception findFavorites in favorites', $t);
         return 1;
     }
-
 }
 
 /**
@@ -122,8 +125,10 @@ function favoriteUpdate(array $input): int
         ));
         $db = null;
     } catch (Throwable $t) {
-        log_error('sql exception favoriteUpdate in favorites',$t);
+        log_error('sql exception favoriteUpdate in favorites', $t);
     }
     return $statement->rowCount();
-
 }
+
+
+
